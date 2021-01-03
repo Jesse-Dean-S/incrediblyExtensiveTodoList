@@ -1,9 +1,11 @@
 //global variables
 var submitBtn = document.getElementById("todoSubmit");
 var list = document.getElementById("todoList");
+var inputContent;
 var appStorage = window.localStorage;
 
 window.onload = fillList;
+
 function fillList() {
     if (appStorage.length > 0) {
         for (let i = 0; i < appStorage.length; i++) {
@@ -12,6 +14,16 @@ function fillList() {
             newBtn.addEventListener("click", (event) => {
                 event.preventDefault();
                 //delete the parent node
+                for (let i = 0; i < appStorage.length; i++) {
+                    //delete item if find
+                    console.log(`newBtn parent = ${newBtn.parentElement.innerText} and stor: ${appStorage.getItem(i)}`)
+
+                    if (newBtn.parentElement.innerText === appStorage.getItem(appStorage.key(i))) {
+
+                        appStorage.removeItem(appStorage.key(i));
+                    }
+                }
+
                 newBtn.parentElement.remove();
             })
             newLi.appendChild(newBtn);
@@ -50,12 +62,11 @@ function delFromLocalStorage(textCheck) {
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
     //we get the input values
-    var inputContent = document.getElementById("todoText");
+    inputContent = document.getElementById("todoText");
     //add these to the lists now
     let newBtn = createNewInput("submit", "delBtn", "Delete");
     //add a event listener to the new button
 
-    console.log(inputContent.value);
     //this needs to be a check, check what value the current id is or smething
 
     appStorage.setItem(list.childNodes.length, inputContent.value);
@@ -64,14 +75,15 @@ submitBtn.addEventListener("click", (e) => {
         event.preventDefault();
         //delete the parent node
 
-        // for (let i = 0; i < appStorage.length; i++) {
-        //     //delete item if find
-        //     console.log(`the content: ${inputContent.value} and the storage item ${appStorage.getItem(i)}`)
-        //     if (inputContent.value === appStorage.getItem(i)) {
-        //         console.log("found item");
-        //         appStorage.removeItem(i);
-        //     }
-        // }
+        for (let i = 0; i < appStorage.length; i++) {
+            //delete item if find
+            console.log(`newBtn parent = ${newBtn.parentElement.innerText} and stor: ${appStorage.getItem(i)}`)
+
+            if (newBtn.parentElement.innerText === appStorage.getItem(appStorage.key(i))) {
+
+                appStorage.removeItem(appStorage.key(i));
+            }
+        }
         newBtn.parentElement.remove();
 
     })
