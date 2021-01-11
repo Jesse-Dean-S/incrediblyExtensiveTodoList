@@ -1,0 +1,29 @@
+{
+  "name": "incrediblyextensivetodolist",
+  "version": "0.0.2",
+  "description": "To do list with user login and tracking of to dos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jesse-Dean-S/incrediblyExtensiveTodoList.git"
+  },
+  "keywords": [
+    "todo",
+    "node",
+    "npm",
+    "express"
+  ],
+  "author": "Jesse Studin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jesse-Dean-S/incrediblyExtensiveTodoList/issues"
+  },
+  "homepage": "https://github.com/Jesse-Dean-S/incrediblyExtensiveTodoList#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
