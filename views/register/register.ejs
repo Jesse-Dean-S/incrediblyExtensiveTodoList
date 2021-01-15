@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header.ejs', {title_name} ) %>
+
+    <body>
+        <!-- register for the website -->
+
+        <div class="container-fluid f-h bg-gradient-1 d-flex flex-column align-items-center justify-content-center">
+            <h1 class="p-5">Welcome to the Future</h1>
+            <div class="container w-50 ">
+                <form action="/register" method="post" class="form-group row">
+                    <div class="form-group row">
+                        <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control w-75" value="somethingElse" id="inputUsername"
+                                placeholder="Email" name="username">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-3">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control w-75" id="inputEmail" placeholder="Email"
+                                value="jesse@jesse.com" name="email">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-3">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control w-75" id="inputPassword" placeholder="Password"
+                                name="password" value="Liverpool11">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-3">
+                        <label for="inputPasswordTwo" class="col-sm-2 col-form-label">Password
+                            again</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control w-75" id="inputPassword" name="passwordTwo"
+                                value="Liverpool11" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-10 offset-sm-2 mt-5">
+                            <input type="submit" value="SignUp" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            </form>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

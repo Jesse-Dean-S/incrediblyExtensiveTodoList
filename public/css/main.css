@@ -1,0 +1,25 @@
+.f-h {
+    height: 100vh;
+}
+
+.bg-gradient-1 {
+    background: #7b4397;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #dc2430, #7b4397);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #dc2430, #7b4397); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-normal {
+    background-color: #DDDDDD;
+}
+
+.pt-30{
+    padding-top: 250px;
+}
+
+.px-30 {
+    padding-bottom: 250px;
+}
+
+.w-35 {
+    width: 35%;
+}

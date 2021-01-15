@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/header.ejs', {title_name} ) %>
+        <title>To do List</title>
+</head>
+
+<body>
+    <div class="container-fluid f-h d-flex bg-gradient-1 flex-column justify-content-center align-items-center">
+        <div
+            class="container-sm w-50 bg-normal h-50 border border-light border-4 rounded d-flex flex-column justify-content-center align-items-center">
+            <div class="container d-flex justify-content-center">
+                <h1>Go Into the <em>Future</em></h1>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <a href="/login"><button type="button" class="btn btn-primary m-2 btn-lg">Login</button></a>
+                <a href="/register/"><button type="button" class="btn btn-primary m-2 btn-lg">Register</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5 requires this script-->
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
