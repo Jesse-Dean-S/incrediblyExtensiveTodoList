@@ -1,9 +1,5 @@
-const { check } = require('express-validator');
-const { MaxKey } = require('mongodb');
-var userModel = require('../model/user');
-const {validationResult} = require('express-validator');
-
-
+const passport = require('passport');
+const User = require('../model/user');
 
 module.exports = {
     getRegister: function (req, res) {
@@ -11,29 +7,16 @@ module.exports = {
         res.render('register/register', { title_name: "Bob", });
     },
     addUsers: function (req, res) {
-        //add users to db .. added soon
-        const errors = validationResult(req);
-        if(!errors.isEmpty()) {
-            console.log(errors);
-            res.redirect('/register/');
-        } else {
-            console.log(req.body.username);
-            let newUser = {
-                email: req.body.email,
-                username: req.body.username,
-                password: req.body.password
+        console.log(`the username: ${req.body.username} and the password ${req.body.password} and email is ${req.body.email}`)
+        User.register(new User({username: req.body.username, email: req.body.email, password: req.body.password}), req.body.password, function(err, user) {
+            if(err) {
+                console.log(err);
+                res.redirect('/register');
             }
-            userModel.create(newUser, (err, user) => {
-                if(err) return next(err);
-                console.log(`saving to db ${user}`);
-                return res.redirect('/register/');
-            });
-            // .then(data => {
-            //     console.log(`returned data ${data}`);
-            // })
-            // .catch(err => {
-            //     console.log(`reported error is : ${err}`);
-            // })
-        }
+            passport.authenticate("local")(req, res, function() {
+                res.redirect('/dashboard');
+            })
+            
+        })
     }
 }
