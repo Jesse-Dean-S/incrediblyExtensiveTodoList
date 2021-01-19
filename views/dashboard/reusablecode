@@ -1,0 +1,10 @@
+<!-- <% if(!(userPosts === undefined) || !(userPosts.length === 0)) {%>
+        <ul>
+            <% for(let i = 0; i < userPosts.length; i++) { %>
+                <li>
+                    <%= userPosts[i].postTitle %>
+                    <%= userPosts[i].postBody %>
+                </li>
+            <%}%>
+        </ul>
+    <%}%> -->

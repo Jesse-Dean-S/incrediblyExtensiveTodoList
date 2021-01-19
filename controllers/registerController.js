@@ -14,6 +14,7 @@ module.exports = {
                 res.redirect('/register');
             }
             passport.authenticate("local")(req, res, function() {
+                req.session.username = req.body.username;
                 res.redirect('/dashboard');
             })
             

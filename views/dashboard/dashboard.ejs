@@ -7,5 +7,29 @@
 </head>
 <body>
     <h1>Dashboard <%=newObject.username%></h1>
+    <form action="/post/create" method="post">
+        <label for="postTitle">Post Title</label>
+        <input type="text" name="postTitle" id="postTitle" placeholder="Enter post title">
+        <label for="postBody">Post Body</label>
+        <input type="text" name="postBody" id="postBody" placeholder="Enter Post Body">
+        <label for="postTags">Post Tags</label>
+        <input type="text" name="postTags" id="postTags" placeholder="enter Post tags">
+        <input type="submit" value="submit Post">
+    </form>
+
+    <h1>Posts by User <%=newObject.username%></h1>
+    <% if(!(userPosts === null)) {%>
+        <ul>
+            <% for(let i = 0; i < userPosts.length; i++) { %>
+                <li>
+                    <%= userPosts[i].postTitle %>
+                    <%= userPosts[i].postBody %>
+                </li>
+            <%}%>
+        </ul>
+    <%}%>
+    <form action="/signout" method="post">
+    <input type="submit" value="Sign Out"></form>
+
 </body>
 </html>
